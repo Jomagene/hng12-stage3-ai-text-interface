@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI-Powered Text Processing Interface
 
-## Getting Started
+## 🚀 Overview
 
-First, run the development server:
+An AI-powered text processing interface that allows users to input text and leverage Chrome's AI APIs for:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Language Detection**
+- **Summarization** (for English text over 150 characters)
+- **Translation**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The UI is designed to be chat-like, responsive, and accessible.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🎯 Features
 
-## Learn More
+### 🔹 Core Functionality
 
-To learn more about Next.js, take a look at the following resources:
+- **Chat-like UI**: User inputs appear in an output area similar to a messaging app.
+- **Language Detection**: Displays detected language below the input text.
+- **Summarization**: If text exceeds 150 characters, a "Summarize" button appears (only for English text).
+- **Translation**: Users can translate text using a dropdown language selector and "Translate" button.
+- **Asynchronous API Calls**: Handles processing via Chrome AI APIs, ensuring smooth user interactions.
+- **Error Handling**: Displays clear messages for empty inputs, API failures, and invalid text.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🎨 UI/UX Considerations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Large, user-friendly text area** for input.
+- **Accessible components** with ARIA labels, keyboard navigation, and focus indicators.
+- **Responsive design**
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Frontend**: Javascript, Next.js, Typescript, Zod
+- **APIs**: Chrome AI APIs (Summarizer, Translator, Language Detection)
+- **Deployment**: Vercel
+
+---
+
+## 📌 Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo.git
+   cd your-repo
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open the app in your chrome browser.
+
+---
+
+## 🔧 Chrome Requirements
+
+### Browser Compatibility
+
+- These APIs are currently exclusive to Chrome, with plans to standardize them across browsers.
+
+### Supported Features & Platforms
+
+- **Summarizer API**: Requires Gemini Nano and runs locally on desktop/laptop computers. Not supported on mobile devices.
+- **Language Detection and Translation APIs**: Available on both desktop and Android devices within Chrome.
+
+### Hardware Requirements
+
+- **Operating Systems**: Windows 10 or 11, macOS 13+ (Ventura and onwards), or Linux.
+- **Storage**: At least 22 GB of free space on the volume containing your Chrome profile.
+- **Network**: Unlimited data or an unmetered connection is recommended.
+
+For comprehensive details, refer to the [Chrome AI Documentation](https://developer.chrome.com/docs/ai).
+
+---
+
+## 📚 Additional Resources
+
+- [Chrome AI APIs Overview](https://developer.chrome.com/docs/ai/)
+- [Summarizer API Documentation](https://developer.chrome.com/docs/ai/summarizer-api)
+- [Translator API Documentation](https://developer.chrome.com/docs/ai/translator-api)
+- [Language Detection API Documentation](https://developer.chrome.com/docs/ai/language-detection)
+- [Asynchronous JavaScript Handling](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
+- [Responsive Web Design Basics](https://web.dev/responsive-web-design-basics/)
+- [Accessible UI Design](https://www.digitala11y.com/)
+
+> **Note:** Enable experimental feature flags in Chrome to access these APIs.
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).

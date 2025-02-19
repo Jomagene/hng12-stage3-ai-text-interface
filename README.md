@@ -5,7 +5,7 @@
 An AI-powered text processing interface that allows users to input text and leverage Chrome's AI APIs for:
 
 - **Language Detection**
-- **Summarization** (for English text over 150 characters)
+- **Summarization** (for now just for English text over 150 characters)
 - **Translation**
 
 The UI is designed to be chat-like, responsive, and accessible.
@@ -33,7 +33,7 @@ The UI is designed to be chat-like, responsive, and accessible.
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: Javascript, Next.js, Typescript, Zod
+- **Frontend**: Javascript, Next.js, Zod
 - **APIs**: Chrome AI APIs (Summarizer, Translator, Language Detection)
 - **Deployment**: Vercel
 
@@ -85,9 +85,6 @@ For comprehensive details, refer to the [Chrome AI Documentation](https://develo
 - [Summarizer API Documentation](https://developer.chrome.com/docs/ai/summarizer-api)
 - [Translator API Documentation](https://developer.chrome.com/docs/ai/translator-api)
 - [Language Detection API Documentation](https://developer.chrome.com/docs/ai/language-detection)
-- [Asynchronous JavaScript Handling](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
-- [Responsive Web Design Basics](https://web.dev/responsive-web-design-basics/)
-- [Accessible UI Design](https://www.digitala11y.com/)
 
 > **Note:** Enable experimental feature flags in Chrome to access these APIs.
 

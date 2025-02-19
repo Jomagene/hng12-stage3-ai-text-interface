@@ -20,11 +20,27 @@ body {
   align-items: center;
 }
 
+.header-logo:hover {
+  cursor: pointer;
+  transition: ease 1s all;
+  box-shadow: rgba(132, 132, 132, 0.12) 0px 2px 4px 0px,
+    rgba(132, 132, 132, 0.32) 0px 2px 16px 0px;
+
+  img {
+    transition: ease 1s;
+    transform: rotate(360deg);
+  }
+  p {
+    transition: ease 1s;
+    transform: scale(1.05);
+  }
+}
+
 @layer components {
   .main-container {
-    @apply max-w-[40rem] p-3;
+    @apply w-full max-w-[40rem] p-3;
   }
   .h-f-container {
-    @apply max-w-[90rem] p-2 sm:p-5;
+    @apply w-full max-w-[90rem] p-2 sm:p-5;
   }
 }

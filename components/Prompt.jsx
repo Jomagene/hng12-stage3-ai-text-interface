@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 
-const Prompt = ({ setText }) => {
+const Prompt = ({ setText, setData, text }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -11,6 +11,7 @@ const Prompt = ({ setText }) => {
     const inputText = formData.get('prompt');
 
     setText(inputText);
+    setData((prev) => [...prev, inputText]);
   };
 
   return (

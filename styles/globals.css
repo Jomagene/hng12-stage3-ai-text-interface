@@ -15,6 +15,7 @@ body {
   font-family: 'Gravitica';
   color: #b8c2e0;
   min-height: 100vh;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,7 +68,7 @@ textarea::-webkit-scrollbar-track {
     @apply w-full max-w-[40rem] px-3 pt-20;
   }
   .h-f-container {
-    @apply w-full max-w-[80rem] p-2 sm:p-5;
+    @apply w-full max-w-[70rem] p-2 sm:p-3;
   }
 }
 

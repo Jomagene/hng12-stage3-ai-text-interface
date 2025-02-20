@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
+import translateUnknownCustomerInput from '@/lib/language';
+import summarise from '@/lib/nonStreamSummarizer';
 
 const Prompt = () => {
   return (

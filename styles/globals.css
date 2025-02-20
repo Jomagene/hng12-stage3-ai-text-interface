@@ -58,6 +58,10 @@ textarea::-webkit-scrollbar-track {
   background: #222; /* Track color */
 }
 
+.send:hover img {
+  transform: rotate(45deg);
+}
+
 @layer components {
   .main-container {
     @apply w-full max-w-[40rem] px-3 pt-32;

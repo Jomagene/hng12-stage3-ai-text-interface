@@ -10,7 +10,6 @@ const Prompt = ({ setText }) => {
     const formData = new FormData(event.target);
     const inputText = formData.get('prompt');
 
-    console.log(inputText);
     setText(inputText);
   };
 
@@ -21,7 +20,7 @@ const Prompt = ({ setText }) => {
       <Textarea
         name="prompt"
         placeholder="What would you like to translate or get summarized ?"
-        className="focus:border hover:shadow-btnShad rounded-lg pb-14 m-[-1px] text-sm sm:text-base min-h-40"
+        className="focus:border hover:shadow-btnShad rounded-lg pb-14 m-[-1px] text-sm min-h-32"
       />
       <div className="flex gap-2 justify-end absolute bottom-0 left-0 right-0 p-3 bg-[#0e1214] backdrop-blur-3xl rounded-bl-2xl">
         <Button

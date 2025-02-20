@@ -23,12 +23,17 @@ const Prompt = () => {
         <div className="flex gap-2">
           <select
             defaultValue="lang"
-            className="bg-transparent border-b border-[#565b69] text-[rgb(184,194,224)] text-sm focus:ring-1 focus:ring-black dark:bg-gray-70 dark:border-gray-600 dark:placeholder-gray-400 hover:shadow-btnShad rounded-sm transition-all">
+            className="bg-transparent border-b border-[#565b69] text-[rgb(165,174,201)] text-sm focus:ring-1 focus:ring-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-100 hover:shadow-btnShad rounded-sm transition-all">
             <option value="lang">Lang</option>
-            <option value="US">En</option>
-            <option value="CA">Ca</option>
-            <option value="FR">Fr</option>
-            <option value="DE">De</option>
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="hi">Hindi</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="ar">Arabic</option>
+            <option value="bn">Bengali</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
           </select>
           <Button className="border-[0.5px] border-[#383b44] hover:shadow-btnShad transition-all">
             <span className="hidden sm:inline-block">Translate</span>

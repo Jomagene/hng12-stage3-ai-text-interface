@@ -22,19 +22,28 @@ body {
 
 .header-logo:hover {
   cursor: pointer;
-  transition: ease 1s all;
-  box-shadow: rgba(132, 132, 132, 0.12) 0px 2px 4px 0px,
-    rgba(132, 132, 132, 0.32) 0px 2px 16px 0px;
+  transition: ease 0.75s all;
 
   img {
-    transition: ease 1s;
+    transition: ease 0.75s;
     transform: rotate(360deg);
   }
   p {
-    transition: ease 1s;
+    transition: ease 0.75s;
     transform: scale(1.05);
   }
 }
+
+.clear-logo {
+  cursor: pointer;
+  transition: ease 0.5s all;
+
+  img {
+    display: inline-block;
+    transform-origin: top right;
+  }
+}
+
 textarea::-webkit-scrollbar {
   width: 6px; /* Thin scrollbar */
 }
@@ -54,7 +63,7 @@ textarea::-webkit-scrollbar-track {
     @apply w-full max-w-[40rem] px-3 pt-32 pb-20;
   }
   .h-f-container {
-    @apply w-full max-w-[90rem] p-2 sm:p-5;
+    @apply w-full max-w-[80rem] p-2 sm:p-5;
   }
 }
 

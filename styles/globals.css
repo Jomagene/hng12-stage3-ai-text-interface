@@ -60,7 +60,7 @@ textarea::-webkit-scrollbar-track {
 
 @layer components {
   .main-container {
-    @apply w-full max-w-[40rem] px-3 pt-32 pb-20;
+    @apply w-full max-w-[40rem] px-3 pt-32;
   }
   .h-f-container {
     @apply w-full max-w-[80rem] p-2 sm:p-5;

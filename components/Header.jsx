@@ -12,7 +12,7 @@ const Header = () => {
         </p>
       </div>
       <picture
-        className="p-[10px] rounded-full cursor-pointer clear-logo hover:scale-105"
+        className="p-[10px] rounded-full cursor-pointer clear-logo hover:scale-105 hover:shadow-btnShad"
         tabIndex={1}>
         <Image
           src={'/icons/clear.png'}

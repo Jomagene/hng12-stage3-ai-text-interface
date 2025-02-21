@@ -15,6 +15,18 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link rel="icon" href="images/gtAI.png" type="image/x-icon" />
+        <meta
+          httpEquiv="origin-trial"
+          content={process.env.ORIGIN_TRIAL_TRANSLATOR_API}
+        />
+        <meta
+          httpEquiv="origin-trial"
+          content={process.env.ORIGIN_TRIAL_LANGUAGE_DETECTOR_API}
+        />
+        <meta
+          httpEquiv="origin-trial"
+          content={process.env.ORIGIN_TRIAL_SUMMARIZATION_API}
+        />
       </head>
       <body>{children}</body>
     </html>

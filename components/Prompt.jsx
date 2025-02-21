@@ -1,27 +1,37 @@
+'use client';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
+import { languageDetector } from '@/lib/language';
+import { useState } from 'react';
 
-const Prompt = ({ setText, setData, text }) => {
-  const handleSubmit = (event) => {
+const Prompt = ({ setText, setData }) => {
+  const [inputText, setInputText] = useState('');
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    if (inputText == '') {
+      console.error('Entrez du text');
+      return;
+    }
 
     // Get the form data
-    const formData = new FormData(event.target);
-    const inputText = formData.get('prompt');
-
+    const lang = await languageDetector(inputText);
     setText(inputText);
-    setData((prev) => [...prev, inputText]);
+    setData((prev) => [...prev, [inputText, lang]]);
+    setInputText('');
   };
 
   return (
     <form
-      className="bg-[#0e1214] backdrop-blur-3xl rounded-2xl"
+      className="bg-[#0e1214] backdrop-blur-3xl rounded-2xl sticky bottom-12"
       onSubmit={handleSubmit}>
       <Textarea
         name="prompt"
+        value={inputText}
         placeholder="What would you like to translate or get summarized ?"
         className="focus:border hover:shadow-btnShad rounded-lg pb-14 m-[-1px] text-sm min-h-32"
+        onChange={(e) => setInputText(e.target.value)}
       />
       <div className="flex gap-2 justify-end absolute bottom-0 left-0 right-0 p-3 bg-[#0e1214] backdrop-blur-3xl rounded-bl-2xl">
         <Button

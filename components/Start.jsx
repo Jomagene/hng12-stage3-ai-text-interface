@@ -12,7 +12,8 @@ const Start = () => {
       </div>
       <p className="text-sm text-center max-w-lg opacity-70">
         As for now, The summarizer works only for English texts and is available
-        when the text provided exceeds 150 characters. The translator
+        when the text provided exceeds 150 characters. The translator is
+        available for any caracter.
       </p>
     </section>
   );

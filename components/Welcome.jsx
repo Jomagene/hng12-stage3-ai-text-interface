@@ -22,6 +22,10 @@ const Welcome = ({ data }) => {
   };
 
   const handleTranslate = async (i) => {
+    if (!data[i][1]) {
+      toast('No laguage detected');
+      return;
+    }
     const toastId = `translate-${i}`; // Unique toast ID
     toast.loading('Translating...', { id: toastId });
     try {

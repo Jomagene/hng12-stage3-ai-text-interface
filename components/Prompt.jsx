@@ -4,14 +4,16 @@ import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { languageDetector } from '@/lib/language';
 import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Prompt = ({ setText, setData }) => {
   const [inputText, setInputText] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (inputText == '') {
+    if (inputText.trim() == '') {
       console.error('Entrez du text');
+      toast.error('Enter something');
       return;
     }
 

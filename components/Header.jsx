@@ -19,6 +19,7 @@ const Header = ({ setData }) => {
           void e.target.offsetWidth; // Trigger a reflow (force re-render)
           e.target.classList.add('animate-sweep'); // Add the class back
           setData([]);
+          window.location.reload();
         }}>
         <Image
           src={'/icons/clear.png'}

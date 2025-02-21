@@ -10,12 +10,16 @@ import toast, { Toaster } from 'react-hot-toast';
 const Welcome = ({ data }) => {
   const [translated, setTranslated] = useState(Array(data.length).fill(''));
   const [targetLang, setTargetLang] = useState(
-    Array(data.length).fill('en') // Default language: English
+    Array(data.length).fill('') // Default language: English
   );
   const [summary, setSummary] = useState(Array(data.length).fill(''));
 
   // Handle language selection
   const handleLanguageChange = (i, event) => {
+    if (targetLang == 'lang') {
+      toast.error('Please Select a target language');
+      return;
+    }
     const newLanguages = [...targetLang];
     newLanguages[i] = event.target.value;
     setTargetLang(newLanguages);

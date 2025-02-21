@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Header = () => {
+const Header = ({ setData }) => {
   return (
     <header className="h-f-container flex justify-between backdrop-blur-2xl rounded-3xl items-center fixed top-0 bg-[#252d3454] z-30">
       <div
@@ -18,6 +18,7 @@ const Header = () => {
           e.target.classList.remove('animate-sweep'); // Remove the class first
           void e.target.offsetWidth; // Trigger a reflow (force re-render)
           e.target.classList.add('animate-sweep'); // Add the class back
+          setData([]);
         }}>
         <Image
           src={'/icons/clear.png'}

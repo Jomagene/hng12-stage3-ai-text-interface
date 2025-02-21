@@ -3,9 +3,8 @@ import Prompt from './Prompt';
 import Welcome from './Welcome';
 import { useState } from 'react';
 
-const Main = () => {
+const Main = ({ setData, data }) => {
   const [text, setText] = useState('');
-  const [data, setData] = useState([]);
 
   return (
     <main className="main-container flex flex-col flex-1">

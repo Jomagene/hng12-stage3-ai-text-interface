@@ -26,14 +26,22 @@ The UI is designed to be chat-like, responsive, and accessible.
 ### 🎨 UI/UX Considerations
 
 - **Large, user-friendly text area** for input.
-- **Accessible components** with ARIA labels, keyboard navigation, and focus indicators.
+- **Accessible components** with keyboard navigation, and focus indicators.
 - **Responsive design**
+
+---
+
+## 🧐 Screenshots
+
+### Launching the Application
+
+![Launching the App](screenshots/launch.png)
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: Javascript, Next.js, Zod
+- **Frontend**: Javascript, Next.js
 - **APIs**: Chrome AI APIs (Summarizer, Translator, Language Detection)
 - **Deployment**: Vercel
 
@@ -54,7 +62,9 @@ The UI is designed to be chat-like, responsive, and accessible.
    ```bash
    npm run dev
    ```
-4. Open the app in your chrome browser.
+4. Open the app in your Chrome browser.
+
+> **Note:** Enable experimental feature flags in Chrome to access these APIs.
 
 ---
 
@@ -90,6 +100,6 @@ For comprehensive details, refer to the [Chrome AI Documentation](https://develo
 
 ---
 
-## 📜 License
+## 💜 License
 
 This project is licensed under the [MIT License](LICENSE).

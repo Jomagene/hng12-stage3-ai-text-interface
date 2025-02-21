@@ -12,28 +12,6 @@ export default {
         btnShad:
           'rgba(132, 132, 132, 0.12) 0px 2px 4px 0px, rgba(132, 132, 132, 0.32) 0px 2px 16px 0px',
       },
-      keyframes: {
-        sweep: {
-          '0%': {
-            transform: 'rotateZ(0deg) translateX(0)',
-          },
-          '25%': {
-            transform: 'rotateZ(-20deg) translateX(-15px)',
-          },
-          '50%': {
-            transform: 'rotateZ(10deg) translateX(10px)',
-          },
-          '75%': {
-            transform: 'rotateZ(-20deg) translateX(-15px)',
-          },
-          '100%': {
-            transform: 'rotateZ(0deg) translateX(0)',
-          },
-        },
-        animation: {
-          sweep: 'sweep 1s infinite ease-in-out',
-        },
-      },
 
       colors: {
         background: 'hsl(var(--background))',

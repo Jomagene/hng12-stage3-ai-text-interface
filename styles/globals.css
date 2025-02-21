@@ -44,6 +44,9 @@ body {
     transform-origin: top right;
   }
 }
+.animate-sweep {
+  animation: sweep 1s ease-in-out;
+}
 
 textarea::-webkit-scrollbar {
   width: 6px; /* Thin scrollbar */
@@ -69,6 +72,24 @@ textarea::-webkit-scrollbar-track {
   }
   .h-f-container {
     @apply w-full max-w-[70rem] p-2 sm:p-3;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    transform: rotateZ(0deg) translateX(0);
+  }
+  25% {
+    transform: rotateZ(-20deg) translateX(-15px);
+  }
+  50% {
+    transform: rotateZ(10deg) translateX(10px);
+  }
+  75% {
+    transform: rotateZ(-20deg) translateX(-15px);
+  }
+  100% {
+    transform: rotateZ(0deg) translateX(0);
   }
 }
 

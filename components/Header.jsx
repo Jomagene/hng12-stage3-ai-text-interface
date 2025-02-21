@@ -13,7 +13,12 @@ const Header = () => {
       </div>
       <picture
         className="p-[10px] rounded-full cursor-pointer clear-logo hover:scale-105 hover:shadow-btnShad"
-        tabIndex={1}>
+        tabIndex={1}
+        onClick={(e) => {
+          e.target.classList.remove('animate-sweep'); // Remove the class first
+          void e.target.offsetWidth; // Trigger a reflow (force re-render)
+          e.target.classList.add('animate-sweep'); // Add the class back
+        }}>
         <Image
           src={'/icons/clear.png'}
           alt="clear chat"

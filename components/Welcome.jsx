@@ -5,6 +5,7 @@ import Start from './Start';
 import { useState } from 'react';
 import translate from '@/lib/language';
 import summarise from '@/lib/nonStreamSummarizer';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Welcome = ({ data }) => {
   const [translated, setTranslated] = useState(Array(data.length).fill(''));
@@ -21,6 +22,8 @@ const Welcome = ({ data }) => {
   };
 
   const handleTranslate = async (i) => {
+    const toastId = `translate-${i}`; // Unique toast ID
+    toast.loading('Translating...', { id: toastId });
     try {
       const singleTrans = await translate(
         data[i][0],
@@ -32,12 +35,16 @@ const Welcome = ({ data }) => {
         newTranslations[i] = singleTrans;
         return newTranslations;
       });
+      toast.success('Translation done', { id: toastId });
     } catch (error) {
       console.error('Translation failed :', error);
+      toast.error('Could not translate', { id: toastId });
     }
   };
 
   const handleSummarize = async (i) => {
+    const toastId = `summarize-${i}`; // Unique toast ID
+    toast.loading('Summarizing...', { id: toastId });
     try {
       const summar = await summarise(data[i][0]);
       setSummary((prev) => {
@@ -45,8 +52,10 @@ const Welcome = ({ data }) => {
         newSummaries[i] = summar;
         return newSummaries;
       });
+      toast.success('Summarization succeeded!', { id: toastId });
     } catch (error) {
       console.error('Summarization failed :', error);
+      toast.error('Error when summarizing.', { id: toastId });
     }
   };
   return (
@@ -54,6 +63,7 @@ const Welcome = ({ data }) => {
       {data?.[0]?.[0] ? (
         data.map((el, i) => (
           <section key={i} className="flex-1 flex flex-col gap-2 pb-5">
+            <Toaster />
             <div className="flex flex-col backdrop-blur-3xl w-fit p-2 rounded-2xl bg-[#303739] self-end ml-10">
               <p className="text-sm py-2 border-b border-[#4f4f4f]">{el[0]}</p>
               <p className="bg-none border-b py-2 text-xs border-[#4f4f4f] hover:btnSha">

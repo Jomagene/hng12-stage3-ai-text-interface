@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="h-f-container flex justify-between backdrop-blur-3xl rounded-3xl items-center fixed top-0 bg-[#252d3454] z-30">
+    <header className="h-f-container flex justify-between backdrop-blur-2xl rounded-3xl items-center fixed top-0 bg-[#252d3454] z-30">
       <div
         className="flex gap-2 p-2 pr-5 cursor-pointer rounded-full items-center header-logo hover:shadow-btnShad"
         tabIndex={1}>

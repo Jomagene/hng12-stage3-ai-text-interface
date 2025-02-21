@@ -1,8 +1,54 @@
+'use client';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import Start from './Start';
+import { useState } from 'react';
+import translate from '@/lib/language';
+import summarise from '@/lib/nonStreamSummarizer';
 
 const Welcome = ({ data }) => {
+  const [translated, setTranslated] = useState(Array(data.length).fill(''));
+  const [targetLang, setTargetLang] = useState(
+    Array(data.length).fill('en') // Default language: English
+  );
+  const [summary, setSummary] = useState(Array(data.length).fill(''));
+
+  // Handle language selection
+  const handleLanguageChange = (i, event) => {
+    const newLanguages = [...targetLang];
+    newLanguages[i] = event.target.value;
+    setTargetLang(newLanguages);
+  };
+
+  const handleTranslate = async (i) => {
+    try {
+      const singleTrans = await translate(
+        data[i][0],
+        data[i][1],
+        targetLang[i]
+      );
+      setTranslated((prev) => {
+        const newTranslations = [...prev];
+        newTranslations[i] = singleTrans;
+        return newTranslations;
+      });
+    } catch (error) {
+      console.error('Translation failed :', error);
+    }
+  };
+
+  const handleSummarize = async (i) => {
+    try {
+      const summar = await summarise(data[i][0]);
+      setSummary((prev) => {
+        const newSummaries = [...prev];
+        newSummaries[i] = summar;
+        return newSummaries;
+      });
+    } catch (error) {
+      console.error('Summarization failed :', error);
+    }
+  };
   return (
     <>
       {data?.[0]?.[0] ? (
@@ -16,7 +62,9 @@ const Welcome = ({ data }) => {
               <div className="flex gap-1 justify-between p-1 rounded-bl-2xl">
                 {el[0].trim().length >= 150 && (
                   <div className="flex items-cente">
-                    <Button className="border-[0.5px] border-[#383b44] hover:shadow-btnShad transition-all summarizeBnt">
+                    <Button
+                      className="border-[0.5px] border-[#383b44] hover:shadow-btnShad transition-all summarizeBnt"
+                      onClick={() => handleSummarize(i)}>
                       <span className="hidden sm:inline-block p-0">
                         Summarize
                       </span>
@@ -33,7 +81,8 @@ const Welcome = ({ data }) => {
                 <div className="flex gap-2">
                   <select
                     defaultValue="lang"
-                    className="bg-transparent border-b border-[#565b69] text-[rgb(165,174,201)] text-sm focus:ring-1 focus:ring-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-100 hover:shadow-btnShad rounded-sm transition-all">
+                    className="bg-transparent border-b border-[#565b69] text-[rgb(165,174,201)] text-sm focus:ring-1 focus:ring-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-100 hover:shadow-btnShad rounded-sm transition-all"
+                    onChange={(e) => handleLanguageChange(i, e)}>
                     <option value="lang">Lang</option>
                     <option value="en">Engl</option>
                     <option value="zh">Chin</option>
@@ -45,7 +94,9 @@ const Welcome = ({ data }) => {
                     <option value="pt">Port</option>
                     <option value="ru">Rus</option>
                   </select>
-                  <Button className="border-[0.5px] border-[#383b44] hover:shadow-btnShad transition-all translateBnt  py-0">
+                  <Button
+                    className="border-[0.5px] border-[#383b44] hover:shadow-btnShad transition-all translateBnt  py-0"
+                    onClick={() => handleTranslate(i)}>
                     <span className="hidden sm:inline-block">Translate</span>
                     <span className="sm:hidden inline-block">Tran</span>
                     <Image
@@ -58,10 +109,16 @@ const Welcome = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="w-fit mr-10 p-2 rounded-2xl bg-[#16323f] self-start text-sm">
-              Hey I want that my section remain in the page flow yet fixed at
-              the bottom of my page
-            </div>
+            {translated[i] && (
+              <div className="w-fit mr-10 p-2 rounded-2xl bg-[#16323f] self-start text-sm">
+                {translated[i]}
+              </div>
+            )}
+            {summary[i] && (
+              <div className="w-fit mr-10 p-2 rounded-2xl bg-[#163f2a] self-start text-sm">
+                {summary[i]}
+              </div>
+            )}
           </section>
         ))
       ) : (

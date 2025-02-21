@@ -13,7 +13,7 @@ const Prompt = ({ setText, setData }) => {
     event.preventDefault();
     if (inputText.trim() == '') {
       console.error('Entrez du text');
-      toast.error('Enter something');
+      setTimeout(() => toast.error('Enter something'), 100);
       return;
     }
 

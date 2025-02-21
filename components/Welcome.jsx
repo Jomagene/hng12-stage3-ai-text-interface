@@ -70,7 +70,7 @@ const Welcome = ({ data }) => {
     <>
       {data?.[0]?.[0] ? (
         data.map((el, i) => (
-          <section key={i} className="flex-1 flex flex-col gap-2 pb-5">
+          <section key={i} className="flex-1 flex flex-col gap-2 pb-5 content">
             <Toaster />
             <div className="flex flex-col backdrop-blur-3xl w-fit p-2 rounded-2xl bg-[#303739] self-end ml-10">
               <p className="text-sm py-2 border-b border-[#4f4f4f]">{el[0]}</p>
@@ -101,16 +101,16 @@ const Welcome = ({ data }) => {
                     defaultValue="lang"
                     className="bg-transparent border-b border-[#565b69] text-[rgb(165,174,201)] text-sm focus:ring-1 focus:ring-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-100 hover:shadow-btnShad rounded-sm transition-all"
                     onChange={(e) => handleLanguageChange(i, e)}>
-                    <option value="lang">Lang</option>
-                    <option value="en">Engl</option>
-                    <option value="zh">Chin</option>
-                    <option value="hi">Hin</option>
-                    <option value="es">Span</option>
+                    <option value="lang">Language</option>
+                    <option value="en">English</option>
+                    <option value="zh">Chinese</option>
+                    <option value="hi">Hindi</option>
+                    <option value="es">Spanish</option>
                     <option value="fr">French</option>
-                    <option value="ar">Arab</option>
-                    <option value="bn">Beng</option>
-                    <option value="pt">Port</option>
-                    <option value="ru">Rus</option>
+                    <option value="ar">Arabic</option>
+                    <option value="bn">Bengali</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ru">Russian</option>
                   </select>
                   <Button
                     className="border-[0.5px] border-[#383b44] hover:shadow-btnShad transition-all translateBnt  py-0"
@@ -128,12 +128,12 @@ const Welcome = ({ data }) => {
               </div>
             </div>
             {translated[i] && (
-              <div className="w-fit mr-10 p-2 rounded-2xl bg-[#16323f] self-start text-sm">
+              <div className="w-fit mr-10 p-2 content rounded-2xl bg-[#16323f] self-start text-sm">
                 {translated[i]}
               </div>
             )}
             {summary[i] && (
-              <div className="w-fit mr-10 p-2 rounded-2xl bg-[#163f2a] self-start text-sm">
+              <div className="w-fit content mr-10 p-2 rounded-2xl bg-[#163f2a] self-start text-sm">
                 {summary[i]}
               </div>
             )}

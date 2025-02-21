@@ -8,8 +8,8 @@ const Main = ({ setData, data }) => {
 
   return (
     <main className="main-container flex flex-col flex-1">
-      <Welcome text={text} setText={setText} data={data} />
-      <Prompt setText={setText} text={text} setData={setData} />
+      <Welcome data={data} />
+      <Prompt setText={setText} setData={setData} />
     </main>
   );
 };

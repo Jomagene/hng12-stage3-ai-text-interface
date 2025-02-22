@@ -45,7 +45,7 @@ const Prompt = ({ setText, setData }) => {
             width={20}
             height={20}
             alt="Send icon"
-            className="transition-all duration-300"
+            className="transition-all duration-500"
           />
         </Button>
       </div>

@@ -89,8 +89,8 @@ const Welcome = ({ data }) => {
                       <span className="sm:hidden inline-block">Sum</span>
                       <Image
                         src="/icons/short.svg"
-                        width={20}
-                        height={20}
+                        width={18}
+                        height={18}
                         alt="Short icon"
                       />
                     </Button>

@@ -12,7 +12,7 @@ const Prompt = ({ setText, setData }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (inputText.trim() == '') {
-      console.error('Entrez du text');
+      toast.error('Entrez du text');
       setTimeout(() => toast.error('Enter something'), 100);
       return;
     }

@@ -23,7 +23,7 @@ const Welcome = ({ data }) => {
 
   const handleTranslate = async (i) => {
     if (!data[i][1]) {
-      toast('No laguage detected');
+      console.warn('No laguage detected');
       return;
     }
     if (targetLang[i] == 'lang') {
@@ -45,7 +45,6 @@ const Welcome = ({ data }) => {
       });
       toast.success('Translation done', { id: toastId });
     } catch (error) {
-      console.error('Translation failed :', error);
       toast.error('Could not translate', { id: toastId });
     }
   };
@@ -62,7 +61,6 @@ const Welcome = ({ data }) => {
       });
       toast.success('Summarization succeeded!', { id: toastId });
     } catch (error) {
-      console.error('Summarization failed :', error);
       toast.error('Error when summarizing.', { id: toastId });
     }
   };
@@ -99,7 +97,7 @@ const Welcome = ({ data }) => {
                 <div className="flex gap-2">
                   <select
                     defaultValue="lang"
-                    className="bg-transparent border-b border-[#565b69] text-[rgb(165,174,201)] text-sm focus:ring-1 focus:ring-black dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-100 hover:shadow-btnShad rounded-sm transition-all"
+                    className="bg-transparent border-b border-[#565b69] text-[rgb(165,174,201)] text-sm focus:ring-1 focus:ring-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-100 hover:shadow-btnShad rounded-sm transition-all"
                     onChange={(e) => handleLanguageChange(i, e)}>
                     <option value="lang">Language</option>
                     <option value="en">English</option>

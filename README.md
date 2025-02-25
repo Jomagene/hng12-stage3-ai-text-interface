@@ -37,6 +37,14 @@ The UI is designed to be chat-like, responsive, and accessible.
 
 ![Launching the App](screenshots/launch.png)
 
+### Translator in action
+
+![Launching the App](screenshots/translation.png)
+
+### Summarizer in action
+
+![Launching the App](screenshots/summarizer.png)
+
 ---
 
 ## 🛠️ Technologies Used
